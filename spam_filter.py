@@ -38,7 +38,7 @@ DATA CLEANING PROCESS
 # check for duplicates
 print(df.duplicated().sum())
 # remove duplicates
-print(df.drop_duplicates(inplace=True))
+df.drop_duplicates(inplace=True)
 # check for missing values
 print(df.isna().sum())
 
