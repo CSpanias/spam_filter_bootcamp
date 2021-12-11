@@ -48,6 +48,8 @@ Define a function that:
 	2. Splits the text into individual words
 	3. Stores the individual words in a list
 """
+
+
 def process_text(text):
 	"""
 		Returns a list of strings (individual words) of a text (paragraph) excluding
