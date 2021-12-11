@@ -4,20 +4,25 @@ This code is based on the YouTube tutorial::
 	https://www.youtube.com/watch?v=cNLPt02RwF0&list=WL&index=4&t=12s
 
 It was modified based on:
+	"Spam or Ham" tutorial:
+	https://github.com/tejank10/Spam-or-Ham/blob/master/spam_ham.ipynb
+
 	Sololearn (Machine Learning path):
 	https://www.sololearn.com/learning/1094
 
-	Machine Learning for Absolute Beginners:
+	Machine Learning for Absolute Beginners book:
 	https://www.amazon.co.uk/Machine-Learning-Absolute-Beginners-Introduction-ebook/dp/B08RWBSKQB
 """
 import pandas as pd
 import string
+import matplotlib.pyplot as plt
 
 from nltk.corpus import stopwords
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
+from wordcloud import WordCloud
 
 # read the CSV file
 df = pd.read_csv(r"C:\Users\10inm\Desktop\spam_filter_bootcamp\emails.csv")
@@ -87,15 +92,27 @@ def process_text(text):
 df['text'].apply(process_text)
 # print the first 5 rows of the column 'text'
 print(df['text'].head())
+
 # create a matrix of words based on their frequency
 messages_bow = CountVectorizer(analyzer=process_text).fit_transform(df['text'])
 """
 CountVectorizer transforms a given text into a vector on the basis of 
 the frequency (count) of each word that occurs in the entire text. 
-(*bow = bog of words)
+(*bow = bag of words)
 More info on how it works: 
 https://www.geeksforgeeks.org/using-countvectorizer-to-extracting-features-from-text/
 """
+
+"""
+VISUALIZATION PROCESS
+"""
+# create a wordcloud visualization for spam words
+spam_wordcloud = WordCloud(width=512, height=512).generate(' '.join(df['text']))
+plt.figure(figsize=(10, 8), facecolor='k')
+plt.imshow(spam_wordcloud)
+plt.axis('off')
+plt.tight_layout(pad=0)
+plt.show()
 
 """
 MODEL TRAINING PROCESS
