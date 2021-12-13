@@ -24,7 +24,7 @@ train_size = 0.8
 X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, train_size=train_size, stratify=y_train, random_state=state)
 
 # Building trees
-gb_clf = GradientBoostingClassifier(n_estimators=20, learning_rate=0.5, max_features=2, max_depth=2, random_state=0, verbose=3) # can specify loss function
+gb_clf = GradientBoostingClassifier(n_estimators=20, learning_rate=0.5, max_features=2, max_depth=5, random_state=0, verbose=3) # can specify loss function
 gb_clf.fit(X_train, y_train)
 print("Accuracy score (training): {0:.3f}".format(gb_clf.score(X_train, y_train)))
 print("Accuracy score (validation): {0:.3f}".format(gb_clf.score(X_test, y_test)))
@@ -33,7 +33,7 @@ predictions = gb_clf.predict(X_test)
 print('Confusion Matrix:') # printing confusion matrix using test values of Y and the predictive value of y
 print(confusion_matrix(y_test, predictions))
 
-# printing confusion matrix in the colored format seen below in output
+# Printing confusion matrix in the colored format seen below in output
 cm = confusion_matrix(y_test, predictions)
 cm
 class_names=[0, 1] # name of classes
@@ -42,7 +42,7 @@ tick_marks = np.arange(len(class_names))
 plt.xticks(tick_marks, class_names)
 plt.yticks(tick_marks, class_names)
 
-# create heatmap
+# Creating heatmap
 sns.heatmap(pd.DataFrame(cm), annot=True, cmap="YlGnBu",fmt='g')
 ax.xaxis.set_label_position("top")
 plt.tight_layout()
@@ -50,6 +50,6 @@ plt.title('Confusion matrix', y=1.1)
 plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 
-# printing classification report
+# Printing classification report
 print("Classification Report:")
 print(classification_report(y_test, predictions))
