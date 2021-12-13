@@ -1,14 +1,22 @@
 ## SPAM FILTER
-This is a repository for creating a spam filter.
+The goal of this project was to create a spam filter.  
+
+This was an assignment during the [Skills Bootcamp in Artificial Intelligence](https://instituteofcoding.org/skillsbootcamps/course/skills-bootcamp-in-artificial-intelligence/).  
+
+It was intended to be presented as a form of presentation, thus, the code is as clearly explained as possible in a step-by-step fashion.
 
 Tools:
-- Python
-  - Pandas
-  - Scikit
-  - NLTK
+- Google Collab
+- Python (Scikit, nltk)
   
- Models based on:
-- Naive-Bayes
-- Support Vector Machine
+ Algorithms used:
+- Multinomial Naive-Bayes
+- Support Vector Classifier
+- Gradient Boosting Classifier
 
-An assignment for the [Skills Bootcamp in Artificial Intelligence](https://instituteofcoding.org/skillsbootcamps/course/skills-bootcamp-in-artificial-intelligence/).
+Learned about:
+- NLP
+- nltk
+- Null Accuracy
+- kFold Cross-Validation
+- Hyperparameter Optimization with GridSearchCV
