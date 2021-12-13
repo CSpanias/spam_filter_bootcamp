@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -5,8 +6,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import classification_report, confusion_matrix
-
-
 
 # Importing dataset and separating labels
 train_data = pd.read_csv("D:\ML\Datasets\emails.csv")
@@ -35,7 +34,7 @@ print('Confusion Matrix:') # printing confusion matrix using test values of Y an
 print(confusion_matrix(y_test, predictions))
 
 # printing confusion matrix in the colored format seen below in output
-cm = confusion_matrix(y_val, predictions)
+cm = confusion_matrix(y_test, predictions)
 cm
 class_names=[0, 1] # name of classes
 fig, ax = plt.subplots()
@@ -53,4 +52,4 @@ plt.xlabel('Predicted label')
 
 # printing classification report
 print("Classification Report:")
-print(classification_report(y_val, predictions))
+print(classification_report(y_test, predictions))
