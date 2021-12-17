@@ -7,7 +7,8 @@ It was intended to be presented as a form of presentation, thus, the code is as 
 
 Tools:
 - Google Collab
-- Python (Scikit, nltk)
+- Python (pandas, numpy, matplotlib, seaborn, ipython, wordcloud, scikit-learn, nltk)
+- Jupyter Notebooks (slideshow)
   
  Algorithms used:
 - Multinomial Naive-Bayes
@@ -15,8 +16,8 @@ Tools:
 - Gradient Boosting Classifier
 
 Learned about:
-- NLP
-- nltk
-- Null Accuracy
-- kFold Cross-Validation
+- NLP general concepts (tokenization)
+- Object manipulation with nltk
+- Evaluation metrics
+- Stratified kFold Cross-Validation
 - Hyperparameter Optimization with GridSearchCV
